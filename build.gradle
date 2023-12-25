@@ -27,6 +27,24 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 */
+plugins {
+    id "jacoco"
+    id "java"
+    id "application"
+    id("org.sonarqube") version "3.5.0.2730"
+}
+
+
+sonar {
+    properties {
+        property("sonar.projectKey", "gradle-first-project")
+        property("sonar.login", "admin")
+        property("sonar.password", "admin123")
+        property("sonar.sources", "src/main")
+        property "sonar.tests", "src/test"
+    }
+}
+
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
